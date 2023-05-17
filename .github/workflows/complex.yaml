@@ -11,14 +11,12 @@ jobs:
         run: date
   job2:
     name: windows job
-    needs: job1
     runs-on: windows-latest
     steps:
       - name: windows-date
         run: Get-Date
   job3:
     name: macos job
-    needs: [job1, job2]
     runs-on: macos-latest
     steps:
       - name: macos-date
